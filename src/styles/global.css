@@ -17,6 +17,7 @@ html {
 }
 
 body {
+  padding-top: 72px;
   font-family: Inter, system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
@@ -197,7 +198,7 @@ p {
 /* ================= HERO ================= */
 .hero {
   min-height: 100svh;
-  padding-top: 96px;
+  padding-top: 0;
   display: grid;
   background: var(--bg);
   grid-template-columns: 1.3fr 0.9fr;
@@ -305,7 +306,10 @@ p {
   }
 
   .hero {
-    padding-top: 84px;
+    padding-top: 72px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
   }
 }
 
@@ -720,4 +724,34 @@ p {
 
 .footer-logo img {
   opacity: 0.95;
+}
+
+/* ===== MOBILE LAYOUT FIX ===== */
+
+@media (max-width: 900px) {
+  section {
+    padding: 64px 6%;
+  }
+
+  body {
+    padding-top: 72px;
+  }
+
+  .hero {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 0;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 48px 5%;
+  }
 }
