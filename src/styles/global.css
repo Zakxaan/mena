@@ -37,6 +37,13 @@ p {
   max-width: 800px;
 }
 
+@media (max-width: 900px) {
+  section {
+    padding: 64px 6%;
+  }
+}
+
+
 /* ================= NAVBAR ================= */
 .navbar {
   position: fixed;
