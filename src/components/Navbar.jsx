@@ -35,7 +35,7 @@ export default function Navbar() {
     <header className="navbar">
       <div className="nav-container">
         <div className="logo">
-  <img src="/tlogo.PNG" alt="meanx.ai logo" />
+  <img src="/tlogo.png" alt="meanx.ai logo" />
   <span className="logo-text">Meanx.ai</span>
 </div>
 
