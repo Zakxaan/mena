@@ -19,7 +19,7 @@ export default function About() {
   return (
     <section className="about reveal" id="about">
     <div ref={imageRef} className="about-image">
-      <img src="/tlogo.png" alt="Meanx.ai logo" />
+      <img src="/favicon.png" alt="Meanx.ai logo" />
     </div>
       <div className="about-content">
         <p>
