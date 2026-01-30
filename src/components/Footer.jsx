@@ -29,7 +29,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        © {new Date().getFullYear()} meanx.ai · All rights reserved
+        © 2023 meanx.ai · All rights reserved
       </div>
     </footer>
   );
