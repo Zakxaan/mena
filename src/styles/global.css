@@ -115,7 +115,8 @@ p {
 
 @media (max-width: 900px) {
   .nav-container {
-    padding: 14px 6%;
+    display: flex;
+    align-items: center;
   }
   .logo img {
     height: 22px;
