@@ -5,7 +5,7 @@ export default function Footer() {
         {/* Brand */}
         <div className="footer-brand">
           <div className="footer-logo">
-  <img src="/flogoo.jpeg" alt="meanx.ai logo" />
+  <img src="/flogo.png" alt="meanx.ai logo" />
 </div>
           <p>
             Enterprise-focused consulting partner specializing in
