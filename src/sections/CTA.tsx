@@ -77,13 +77,39 @@ export function CTA() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Simulate API call
+  e.preventDefault();
+
+  try {
+    const res = await fetch(
+      'https://mena-backend-vgzs.onrender.com/api/contact',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      }
+    );
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      throw new Error(data.message || 'Failed to send message');
+    }
+
+    // ✅ REAL success (only after backend responds)
     toast.success('Message sent successfully! Our team will reach out within 24 hours.');
     setDialogOpen(false);
     setFormData({ name: '', email: '', company: '', message: '' });
-  };
+
+  } catch (error: any) {
+    console.error('Contact form error:', error);
+    toast.error(
+      error.message || 'Something went wrong. Please try again later.'
+    );
+  }
+};
+
 
   return (
     <section
