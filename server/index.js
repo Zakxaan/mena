@@ -61,27 +61,30 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Email transporter configuration
 const createTransporter = () => {
-  // For production, use actual SMTP credentials
-  if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
-    return nodemailer.createTransporter({
+  if (
+    process.env.SMTP_HOST &&
+    process.env.SMTP_USER &&
+    process.env.SMTP_PASS
+  ) {
+    return nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: parseInt(process.env.SMTP_PORT || '587'),
-      secure: process.env.SMTP_SECURE === 'true',
+      secure: false,
       auth: {
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
     });
   }
-  
-  // For development, use Ethereal (fake SMTP)
+
+  // Development fallback (Ethereal)
   return nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
     secure: false,
     auth: {
-      user: process.env.ETHEREAL_USER || 'ethereal_user',
-      pass: process.env.ETHEREAL_PASS || 'ethereal_pass',
+      user: process.env.ETHEREAL_USER,
+      pass: process.env.ETHEREAL_PASS,
     },
   });
 };
@@ -142,18 +145,18 @@ app.post(
 
       // Prepare email content
       const mailOptions = {
-        from: `"${name}" <${email}>`,
-        to: process.env.CONTACT_EMAIL || 'contact@meanx.ai',
-        replyTo: email,
-        subject: `New Contact Form Submission from ${name}`,
-        text: `
+  from: `"Meanx AI Contact" <contact@meanx.ai>`,
+  to: process.env.CONTACT_EMAIL || 'contact@meanx.ai',
+  replyTo: email,
+  subject: `New Contact Form Submission from ${name}`,
+  text: `
 Name: ${name}
 Email: ${email}
 Company: ${company || 'Not provided'}
 
 Message:
 ${message}
-        `,
+  `,
         html: `
 <!DOCTYPE html>
 <html>
