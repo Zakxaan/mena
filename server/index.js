@@ -143,7 +143,7 @@ app.post(
       // Prepare email content
       const mailOptions = {
         from: `"${name}" <${email}>`,
-        to: process.env.CONTACT_EMAIL || 'hello@meanx.ai',
+        to: process.env.CONTACT_EMAIL || 'contact@meanx.ai',
         replyTo: email,
         subject: `New Contact Form Submission from ${name}`,
         text: `

@@ -68,7 +68,7 @@ export function Footer() {
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-3 text-white/50 text-sm">
                 <Mail className="w-4 h-4 text-indigo-400" />
-                <span>hello@meanx.ai</span>
+                <span>contact@meanx.ai</span>
               </div>
               <div className="flex items-center gap-3 text-white/50 text-sm">
                 <Phone className="w-4 h-4 text-indigo-400" />
