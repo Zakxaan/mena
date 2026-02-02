@@ -26,13 +26,19 @@ app.use(helmet({
 }));
 
 // CORS configuration
-const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+app.use(cors({
+  origin: [
+    'https://meanx.ai',
+    'https://www.meanx.ai',
+    'http://localhost:5173',
+  ],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: true,
-};
+}));
+
 app.use(cors(corsOptions));
+
+app.options('*', cors());
 
 // Rate limiting
 const limiter = rateLimit({
