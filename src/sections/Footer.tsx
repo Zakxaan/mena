@@ -50,7 +50,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <a href="#hero" className="flex items-center gap-3 mb-6">
               <img
-      src="dist/logo.png" // same logo as navbar
+      src="images/logo.png" // same logo as navbar
       alt="Meanx AI Logo"
       className="w-10 h-10 object-contain"
     />

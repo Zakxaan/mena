@@ -32,7 +32,7 @@ function App() {
           <div className="relative mb-8">
             <div className="mx-auto flex items-center justify-center animate-pulse">
               <img
-      src="dist/logo.png" // same logo as navbar
+      src="images/logo.png" // same logo as navbar
       alt="Meanx AI Logo"
       className="w-10 h-10 object-contain"
     />

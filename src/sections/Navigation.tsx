@@ -53,7 +53,7 @@ export function Navigation() {
               className="flex items-center gap-3"
             >
               <img
-                src="dist/logo.png" // put logo in /public
+                src="images/logo.png" // put logo in /public
                 alt="Meanx AI Logo"
                 className="w-9 h-9 md:w-10 md:h-10 object-contain"
               />
