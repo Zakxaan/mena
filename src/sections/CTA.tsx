@@ -97,18 +97,14 @@ export function CTA() {
       throw new Error(data.message || 'Failed to send message');
     }
 
-    // ✅ REAL success (only after backend responds)
-    toast.success('Message sent successfully! Our team will reach out within 24 hours.');
+    toast.success(data.message);
     setDialogOpen(false);
     setFormData({ name: '', email: '', company: '', message: '' });
-
-  } catch (error: any) {
-    console.error('Contact form error:', error);
-    toast.error(
-      error.message || 'Something went wrong. Please try again later.'
-    );
+  } catch (err: any) {
+    toast.error(err.message || 'Something went wrong');
   }
 };
+
 
 
   return (

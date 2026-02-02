@@ -5,12 +5,12 @@ import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
 import { body, validationResult } from 'express-validator';
 import nodemailer from 'nodemailer';
-
 // Load environment variables
 const envFile = process.env.NODE_ENV === 'production' ? '.env.production' : '.env';
 dotenv.config({ path: envFile });
 
 const app = express();
+app.set('trust proxy', 1);
 const PORT = process.env.PORT || 3001;
 
 // Security middleware
