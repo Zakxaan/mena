@@ -81,12 +81,12 @@ export function Navigation() {
 
             {/* CTA */}
             <div className="hidden md:block">
-              <button
-                onClick={() => scrollToSection('#contact')}
+              <a
+                href="mailto:contact@meanx.ai"
                 className="px-5 py-2.5 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg hover:from-indigo-600 hover:to-purple-700 transition-all shadow-lg shadow-indigo-500/20"
               >
                 Get in Touch
-              </button>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -133,12 +133,12 @@ export function Navigation() {
                 {link.label}
               </a>
             ))}
-            <button
-              onClick={() => scrollToSection('#contact')}
+            <a
+              href="mailto:contact@meanx.ai"
               className="mt-4 px-5 py-3 text-sm font-medium text-white bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg"
             >
               Get in Touch
-            </button>
+            </a>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Linkedin, Twitter, Github, Mail, MapPin, Phone } from 'lucide-react';
+import { Linkedin, Twitter, Github, Mail } from 'lucide-react';
 
 const footerLinks = {
   services: [
@@ -14,13 +14,6 @@ const footerLinks = {
     { label: 'Case Studies', href: '#impact' },
     { label: 'Tech Stack', href: '#tech' },
     { label: 'Careers', href: '#' },
-  ],
-  resources: [
-    { label: 'Blog', href: '#' },
-    { label: 'Documentation', href: '#' },
-    { label: 'API Reference', href: '#' },
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'Terms of Service', href: '#' },
   ],
 };
 
@@ -45,7 +38,7 @@ export function Footer() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent" />
 
       <div className="container py-16 md:py-20">
-        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2">
             <a href="#hero" className="flex items-center gap-3 mb-6">
@@ -66,18 +59,13 @@ export function Footer() {
 
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
-              <div className="flex items-center gap-3 text-white/50 text-sm">
+              <a
+                href="mailto:contact@meanx.ai"
+                className="flex items-center gap-3 text-white/50 hover:text-white text-sm transition-colors"
+              >
                 <Mail className="w-4 h-4 text-indigo-400" />
                 <span>contact@meanx.ai</span>
-              </div>
-              <div className="flex items-center gap-3 text-white/50 text-sm">
-                <Phone className="w-4 h-4 text-indigo-400" />
-                <span>+966 123-4567</span>
-              </div>
-              <div className="flex items-center gap-3 text-white/50 text-sm">
-                <MapPin className="w-4 h-4 text-indigo-400" />
-                <span>Saudi Arabia, Riyadh</span>
-              </div>
+              </a>
             </div>
 
             {/* Social Links */}
@@ -124,27 +112,6 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link, index) => (
-                <li key={index}>
-                  <a
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      scrollToSection(link.href);
-                    }}
-                    className="text-white/50 hover:text-white transition-colors text-sm"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources Links */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Resources</h4>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link, index) => (
                 <li key={index}>
                   <a
                     href={link.href}

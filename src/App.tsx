@@ -6,7 +6,6 @@ import { Capabilities } from './sections/Capabilities';
 import { About } from './sections/About';
 import { HowWeWork } from './sections/HowWeWork';
 import { ClientImpact } from './sections/ClientImpact';
-import { TechStack } from './sections/TechStack';
 import { InnovationService } from './sections/InnovationService';
 import { CTA } from './sections/CTA';
 import { Footer } from './sections/Footer';
@@ -97,7 +96,6 @@ function App() {
         <About />
         <HowWeWork />
         <ClientImpact />
-        <TechStack />
         <InnovationService />
         <CTA />
       </main>
